@@ -25,4 +25,43 @@ class Users extends CI_Controller
         $this->load->view('user/view_data', $data);
         $this->load->view('view_footer');
     }
+
+    public function tambah()
+    {
+        $data["title"] = "Tambah Data Users";
+
+        $this->load->view('view_header', $data);
+        $this->load->view('user/view_tambah_data');
+        $this->load->view('view_footer');
+    }
+
+    public function insert()
+    {
+        $username = $this->input->post("username");
+        $nama_lengkap = $this->input->post("nama_lengkap");
+        $password = md5($this->input->post("password"));
+
+        $data = array(
+            "username" => $username,
+            "nama_lengkap" => $nama_lengkap,
+            "password" => $password
+        );
+
+        $this->model_users->insert_data($data);
+
+        redirect("users");
+    }
+
+    public function edit($id)
+    {
+        $data["title"] = "Edit Data Users";
+
+        $this->load->view('view_header', $data);
+        $this->load->view('user/view_edit_data', $data);
+        $this->load->view('view_footer');
+    }
+
+    public function update()
+    {
+    }
 }
