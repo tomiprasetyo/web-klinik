@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="<?= base_url() ?>assets/css/bootstrap.min.css"
+    <link rel="stylesheet" href="<?= base_url(); ?>assets/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <title>Klinik Sehat Sejahtera</title>
 </head>
@@ -21,24 +21,32 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Features</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Pricing</a>
-                </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Dropdown link
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarMaster" role="button" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        Master Data
                     </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <a class="dropdown-item" href="#">Something else here</a>
+                    <div class="dropdown-menu" aria-labelledby="navbarMaster">
+                        <a class="dropdown-item" href="<?= base_url("users") ?>">Data User</a>
+                        <a class="dropdown-item" href="<?= base_url("dokter") ?>">Data Dokter</a>
+                        <a class="dropdown-item" href="<?= base_url("pasien") ?>">Data Pasien</a>
+                        <a class="dropdown-item" href="<?= base_url("obat") ?>">Data Obat</a>
+                    </div>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="<?= base_url("kunjungan"); ?>">Kunjungan/Berobat</a>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarLaporan" role="button" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        Laporan
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarLaporan">
+                        <a class="dropdown-item" href="<?= base_url("laporan/data_dokter") ?>">Data Dokter</a>
+                        <a class="dropdown-item" href="<?= base_url("laporan/data_pasien") ?>">Data Pasien</a>
+                        <a class="dropdown-item" href="<?= base_url("laporan/data_kunjungan") ?>">Data Kunjungan</a>
                     </div>
                 </li>
 
