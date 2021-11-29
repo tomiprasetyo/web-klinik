@@ -5,28 +5,28 @@ class Model_users extends CI_Model
 {
     function tampil_data()
     {
-        return $this->db->get("users");
+        return $this->db->get("user");
     }
 
     function insert_data($data)
     {
-        return $this->db->insert("users", $data);
+        return $this->db->insert("user", $data);
     }
 
     function edit_data($where)
     {
-        return $this->db->get_where("users", $where);
+        return $this->db->get_where("user", $where);
     }
 
     function update_data($data, $where)
     {
         $this->db->where($where);
-        $this->db->update("users", $data);
+        $this->db->update("user", $data);
     }
 
     function hapus_data($where)
     {
         $this->db->where($where);
-        $this->db->delete("users");
+        $this->db->delete("user");
     }
 }

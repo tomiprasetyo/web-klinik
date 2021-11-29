@@ -22,7 +22,7 @@ class Users extends CI_Controller
         $data["users"] = $this->model_users->tampil_data()->result_array();
 
         $this->load->view('view_header', $data);
-        $this->load->view('users/view_data', $data);
+        $this->load->view('user/view_data', $data);
         $this->load->view('view_footer');
     }
 }
