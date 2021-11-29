@@ -10,8 +10,7 @@
     <title>Login Klinik Sehat Sejahtera</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="<?= base_url(); ?>assets/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="<?= base_url(); ?>assets/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
 
     <!-- Favicons -->
     <link rel="icon" href="<?= base_url(); ?>assets/favicon.ico">
