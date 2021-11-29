@@ -82,4 +82,11 @@ class Users extends CI_Controller
 
         redirect("users");
     }
+
+    function hapus($id)
+    {
+        $where = array("id" => $id);
+        $this->model_users->hapus_data($where);
+        redirect("users");
+    }
 }

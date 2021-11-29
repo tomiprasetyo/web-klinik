@@ -1,3 +1,9 @@
+<footer class="footer mt-auto py-3">
+    <div class="container-fluid text-center">
+        <span class="text-muted">Copyright &copy; 2021 - Kelompok 1</span>
+    </div>
+</footer>
+
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
