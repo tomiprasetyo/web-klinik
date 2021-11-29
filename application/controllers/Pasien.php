@@ -37,14 +37,14 @@ class Pasien extends CI_Controller
 
     public function insert()
     {
-        $username = $this->input->post("username");
-        $nama_lengkap = $this->input->post("nama_lengkap");
-        $password = md5($this->input->post("password"));
+        $nama = $this->input->post("nama_pasien");
+        $jk = $this->input->post("jenis_kelamin");
+        $umur = $this->input->post("umur");
 
         $data = array(
-            "username" => $username,
-            "nama_lengkap" => $nama_lengkap,
-            "password" => $password
+            "nama_pasien" => $nama,
+            "jenis_kelamin" => $jk,
+            "umur" => $umur
         );
 
         $this->model_pasien->insert_data($data);
@@ -56,7 +56,7 @@ class Pasien extends CI_Controller
     {
         $data["title"] = "Edit Data pasien";
 
-        $where = array("id" => $id);
+        $where = array("id_pasien" => $id);
         $data["pasien"] = $this->model_pasien->edit_data($where)->row_array();
 
         $this->load->view('view_header', $data);
@@ -67,17 +67,17 @@ class Pasien extends CI_Controller
     public function update()
     {
         $id = $this->input->post("id");
-        $username = $this->input->post("username");
-        $nama_lengkap = $this->input->post("nama_lengkap");
-        $password = md5($this->input->post("password"));
+        $nama = $this->input->post("nama_pasien");
+        $jk = $this->input->post("jenis_kelamin");
+        $umur = $this->input->post("umur");
 
         $data = array(
-            "username" => $username,
-            "nama_lengkap" => $nama_lengkap,
-            "password" => $password
+            "nama_pasien" => $nama,
+            "jenis_kelamin" => $jk,
+            "umur" => $umur
         );
 
-        $where = array("id" => $id);
+        $where = array("id_pasien" => $id);
         $this->model_pasien->update_data($data, $where);
 
         redirect("pasien");
@@ -85,7 +85,7 @@ class Pasien extends CI_Controller
 
     function hapus($id)
     {
-        $where = array("id" => $id);
+        $where = array("id_pasien" => $id);
         $this->model_pasien->hapus_data($where);
         redirect("pasien");
     }
