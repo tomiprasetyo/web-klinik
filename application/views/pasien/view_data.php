@@ -24,19 +24,16 @@
                             $no = 1;
                             foreach ($pasien as $u) { ?>
 
-                            <tr>
-                                <td class="text-center"><?= $no; ?></td>
-                                <td><?= $u["nama_pasien"]; ?></td>
-                                <td><?= $u["jenis_kelamin"]; ?></td>
-                                <td><?= $u["umur"]; ?></td>
-                                <td>
-                                    <a href="<?= base_url() . "pasien/edit/" . $u["id_pasien"]; ?>"
-                                        class="btn btn-warning btn-sm">Edit</a>
-                                    <a href="<?= base_url() . "pasien/hapus/" . $u["id_pasien"]; ?>"
-                                        class="btn btn-danger btn-sm"
-                                        onclick="return confirm('Yakin akan menghapus data?')">Hapus</a>
-                                </td>
-                            </tr>
+                                <tr>
+                                    <td class="text-center"><?= $no; ?></td>
+                                    <td><?= $u["nama_pasien"]; ?></td>
+                                    <td><?= $u["jenis_kelamin"]; ?></td>
+                                    <td><?= $u["umur"]; ?></td>
+                                    <td>
+                                        <a href="<?= base_url() . "pasien/edit/" . $u["id_pasien"]; ?>" class="btn btn-warning btn-sm">Edit</a>
+                                        <a href="<?= base_url() . "pasien/hapus/" . $u["id_pasien"]; ?>" class="btn btn-danger btn-sm" onclick="return confirm('Yakin akan menghapus data?')">Hapus</a>
+                                    </td>
+                                </tr>
                             <?php $no++;
                             } ?>
                         </tbody>
