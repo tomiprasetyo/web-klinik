@@ -12,26 +12,26 @@ class Pasien extends CI_Controller
             redirect("auth");
         }
 
-        $this->load->model("model_users");
+        $this->load->model("model_pasien");
     }
 
     public function index()
     {
-        $data["title"] = "Manajemen Data Users";
+        $data["title"] = "Manajemen Data pasien";
 
-        $data["users"] = $this->model_users->tampil_data()->result_array();
+        $data["pasien"] = $this->model_pasien->tampil_data()->result_array();
 
         $this->load->view('view_header', $data);
-        $this->load->view('user/view_data', $data);
+        $this->load->view('pasien/view_data', $data);
         $this->load->view('view_footer');
     }
 
     public function tambah()
     {
-        $data["title"] = "Tambah Data Users";
+        $data["title"] = "Tambah Data pasien";
 
         $this->load->view('view_header', $data);
-        $this->load->view('user/view_tambah_data');
+        $this->load->view('pasien/view_tambah_data');
         $this->load->view('view_footer');
     }
 
@@ -47,20 +47,20 @@ class Pasien extends CI_Controller
             "password" => $password
         );
 
-        $this->model_users->insert_data($data);
+        $this->model_pasien->insert_data($data);
 
-        redirect("users");
+        redirect("pasien");
     }
 
     public function edit($id)
     {
-        $data["title"] = "Edit Data Users";
+        $data["title"] = "Edit Data pasien";
 
         $where = array("id" => $id);
-        $data["users"] = $this->model_users->edit_data($where)->row_array();
+        $data["pasien"] = $this->model_pasien->edit_data($where)->row_array();
 
         $this->load->view('view_header', $data);
-        $this->load->view('user/view_edit_data', $data);
+        $this->load->view('pasien/view_edit_data', $data);
         $this->load->view('view_footer');
     }
 
@@ -78,15 +78,15 @@ class Pasien extends CI_Controller
         );
 
         $where = array("id" => $id);
-        $this->model_users->update_data($data, $where);
+        $this->model_pasien->update_data($data, $where);
 
-        redirect("users");
+        redirect("pasien");
     }
 
     function hapus($id)
     {
         $where = array("id" => $id);
-        $this->model_users->hapus_data($where);
-        redirect("users");
+        $this->model_pasien->hapus_data($where);
+        redirect("pasien");
     }
 }
