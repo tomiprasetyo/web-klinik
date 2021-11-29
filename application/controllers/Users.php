@@ -56,6 +56,9 @@ class Users extends CI_Controller
     {
         $data["title"] = "Edit Data Users";
 
+        $where = array("id" => $id);
+        $data["users"] = $this->model_users->edit_data($where)->row_array();
+
         $this->load->view('view_header', $data);
         $this->load->view('user/view_edit_data', $data);
         $this->load->view('view_footer');
@@ -63,5 +66,20 @@ class Users extends CI_Controller
 
     public function update()
     {
+        $id = $this->input->post("id");
+        $username = $this->input->post("username");
+        $nama_lengkap = $this->input->post("nama_lengkap");
+        $password = md5($this->input->post("password"));
+
+        $data = array(
+            "username" => $username,
+            "nama_lengkap" => $nama_lengkap,
+            "password" => $password
+        );
+
+        $where = array("id" => $id);
+        $this->model_users->update_data($data, $where);
+
+        redirect("users");
     }
 }
