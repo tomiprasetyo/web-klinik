@@ -1,32 +1,32 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Model_pasien extends CI_Model
+class Model_users extends CI_Model
 {
     function tampil_data()
     {
-        return $this->db->get("pasien");
+        return $this->db->get("user");
     }
 
     function insert_data($data)
     {
-        return $this->db->insert("pasien", $data);
+        return $this->db->insert("user", $data);
     }
 
     function edit_data($where)
     {
-        return $this->db->get_where("pasien", $where);
+        return $this->db->get_where("user", $where);
     }
 
     function update_data($data, $where)
     {
         $this->db->where($where);
-        $this->db->update("pasien", $data);
+        $this->db->update("user", $data);
     }
 
     function hapus_data($where)
     {
         $this->db->where($where);
-        $this->db->delete("pasien");
+        $this->db->delete("user");
     }
 }
