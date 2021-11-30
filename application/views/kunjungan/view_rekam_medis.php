@@ -7,7 +7,24 @@
                         Biodata Pasien
                     </div>
                     <div class="card-body">
-                        table/data pasien
+                        <table class="table table-sm">
+                            <tr>
+                                <th>Nama Pasien</th>
+                                <td>:</td>
+                                <td><?= $d['nama_pasien'];?></td>
+                            </tr>
+                            <tr>
+                                <th>jenis Kelamin</th>
+                                <td>:</td>
+                                <td><?= $d['jenis_kelamin'];?></td>
+                            </tr>
+                            <tr>
+                                <th>Umur</th>
+                                <td>:</td>
+                                <td><?= $d['umur'];?></td>
+                            </tr>
+                            
+                        </table>
                     </div>
                 </div>
 
@@ -16,7 +33,17 @@
                         Riwayat Berobat
                     </div>
                     <div class="card-body">
-                        table/data riwayat
+                        <table class="table table-sm table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>No.</th>
+                                    <th>Tgl Berobat</th>
+                                    <th>Keluhan</th>
+                                    <th>Diagnosa</th>
+                                    <th>Penatalaksanaan</th>
+                                </tr>
+                            </thead>
+                        </table>
                     </div>
                 </div>
             </div>

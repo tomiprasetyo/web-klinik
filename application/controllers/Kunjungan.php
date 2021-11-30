@@ -15,6 +15,7 @@ class Kunjungan extends CI_Controller
         $this->load->model("model_kunjungan");
         $this->load->model("model_pasien");
         $this->load->model("model_dokter");
+        $this->load->model("model_obat");
     }
 
     public function index()
@@ -104,10 +105,21 @@ class Kunjungan extends CI_Controller
     {
         $data['title'] = "Rekam Medis";
 
+        //menampilkan detail rekam medis
+        $data['d'] = $this->model_kunjungan->tampil_rekam($id)->row_array();
+
+        //menampilkan riwayat kunjungan
         $q = $this->db->query("SELECT id_pasien FROM berobat WHERE id_berobat='$id'")->row_array();
         $id_pasien = $q['id_pasien'];
 
-        
+        $data['riwayat'] = $this->model_kunjungan->tampil_riwayat($id_pasien)->result_array();
+
+        //menampilkan data obat di combo
+        $data['obat'] = $this->model_obat->tampil_data()->result_array();
+
+        //menampilkan resep obat
+        $data['resep'] = $this->model_kunjungan->tampil_resep($id)->result_array();
+
 
         $this->load->view('view_header', $data);
         $this->load->view('kunjungan/view_rekam_medis', $data);
