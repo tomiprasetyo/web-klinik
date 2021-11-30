@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Model_Dokter extends CI_Model
+class Model_dokter extends CI_Model
 {
     function tampil_data()
     {

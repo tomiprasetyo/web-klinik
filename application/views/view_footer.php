@@ -1,4 +1,4 @@
-<footer class="footer mt-auto py-3">
+<footer class="footer mt-4 py-3">
     <div class="container-fluid text-center">
         <span class="text-muted">Copyright &copy; 2021 - Kelompok Satu</span>
     </div>
