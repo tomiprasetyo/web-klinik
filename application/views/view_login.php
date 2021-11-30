@@ -13,24 +13,24 @@
     <link href="<?= base_url(); ?>assets/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
 
     <!-- Favicons -->
-    <link rel="icon" href="<?= base_url(); ?>assets/favicon.ico">
+    <link rel="icon" href="<?= base_url(); ?>assets/clinic-icon.png">
 
 
     <style>
-        .bd-placeholder-img {
-            font-size: 1.125rem;
-            text-anchor: middle;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            user-select: none;
-        }
+    .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
 
-        @media (min-width: 768px) {
-            .bd-placeholder-img-lg {
-                font-size: 3.5rem;
-            }
+    @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+            font-size: 3.5rem;
         }
+    }
     </style>
     <!-- Custom styles for this template -->
     <link href="<?= base_url(); ?>assets/custom/login.css" rel="stylesheet">
@@ -38,7 +38,7 @@
 
 <body class="text-center">
     <form class="form-signin" method="POST" action="<?= base_url("auth/login_aksi"); ?>">
-        <img class="mb-4" src="<?= base_url(); ?>assets/icon-bootstrap.svg" alt="" width="72" height="72">
+        <img class="mb-4" src="<?= base_url(); ?>assets/clinic-svg.svg" alt="" width="72" height="72">
         <h1 class="h3 mb-3 font-weight-normal">Silahkan Login</h1>
         <div class="alert-danger">
             <?= validation_errors(); ?>
