@@ -25,7 +25,7 @@
                         <label for="">Dokter Tujuan</label>
                         <select name="dokter" id="" class="form-control" required>
                             <option value="">- Pilih Dokter -</option>
-                            <?php foreach ($pasien as $u) { ?>
+                            <?php foreach ($dokter as $u) { ?>
                             <option value="<?= $u["id_dokter"]; ?>"><?= $u["nama_dokter"]; ?></option>
                             <?php } ?>
                         </select>
