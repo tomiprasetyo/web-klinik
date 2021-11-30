@@ -125,4 +125,46 @@ class Kunjungan extends CI_Controller
         $this->load->view('kunjungan/view_rekam_medis', $data);
         $this->load->view('view_footer');
     }
+
+    function insert_rekam()
+    {
+        $id_berobat = $this->input->post('id');
+        $keluhan = $this->input->post('keluhan');
+        $diagnosa = $this->input->post('diagnosa');
+        $penatalaksanaan = $this->input->post('penatalaksanaan');
+
+        $data = array(
+            'keluhan_pasien' => $keluhan,
+            'hasil_diagnosa' => $diagnosa,
+            'penatalaksanaan' => $penatalaksanaan,
+        );
+
+        $where = array('id_berobat' => $id_berobat);
+
+        $this->model_kunjungan->update_data($data, $where);
+
+        redirect('kunjungan/rekam/' . $id_berobat);
+    }
+
+    function insert_resep()
+    {
+        $id_berobat = $this->input->post('id');
+        $obat = $this->input->post('obat');
+
+        $data = array(
+            'id_berobat' => $id_berobat,
+            'id_obat' => $obat
+        );
+
+        $this->model_kunjungan->insert_resep($data);
+
+        redirect('kunjungan/rekam/' . $id_berobat);
+    }
+
+    function hapus_resep($id, $id_berobat)
+    {
+        $where = array('id_resep' => $id);
+        $this->model_kunjungan->hapus_resep($where);
+        redirect('kunjungan/rekam/' . $id_berobat);
+    }
 }

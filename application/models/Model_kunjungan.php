@@ -66,4 +66,15 @@ class Model_kunjungan extends CI_Model
         WHERE resep_obat.id_berobat='$id'");
         return $query;
     }
+
+    function insert_resep($data)
+    {
+        return $this->db->insert('resep_obat', $data);
+    }
+
+    function hapus_resep($where)
+    {
+        $this->db->where($where);
+        $this->db->delete('resep_obat');
+    }
 }

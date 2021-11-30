@@ -65,22 +65,23 @@
                 <div class="card border-danger">
                     <div class="card-header bg-danger text-white">
                         Catatan ( Rekam Medis )
+                        <a href="<?= base_url('kunjungan') ?>" class="btn btn-warning btn-sm float-right">Kembali</a>
                     </div>
                     <div class="card-body">
                         <form method="post" action="<?= base_url(); ?>kunjungan/insert_rekam">
                             <input type="hidden" name="id" value="<?= $d['id_berobat']; ?>">
                             <div class="form-group">
                                 <label for="">Keluhan</label>
-                                <textarea name="keluhan" class="form-control" required></textarea>
+                                <textarea name="keluhan" class="form-control" required><?= $d['keluhan_pasien']; ?></textarea>
                             </div>
                             <div class="form-group">
                                 <label for="">Diagnosa</label>
-                                <textarea name="diagnosa" class="form-control" required></textarea>
+                                <textarea name="diagnosa" class="form-control" required><?= $d['hasil_diagnosa']; ?></textarea>
                             </div>
                             <div class="form-group">
                                 <label for="">Penatalaksanaan</label>
                                 <select name="penatalaksanaan" id="" class="form-control" required>
-                                    <option value="">-Pilih-</option>
+                                    <option value="<?= $d['penatalaksanaan']; ?>" selected><?= $d['penatalaksanaan']; ?></option>
                                     <option value="Rawat Jalan">Rawat Jalan</option>
                                     <option value="Rawat Inap">Rawat Inap</option>
                                     <option value="Rujuk">Rujuk</option>
@@ -97,16 +98,46 @@
                         Resep Obat
                     </div>
                     <div class="card-body">
-                        <form method="post" action="<?= base_url('kunjungan/insert_resep');?>">
-                                <div class="form-group">
-                                    <label for="obat">Obat</label>
-                                    <select name="obat" id="" class="form-control">
-                                        <?php foreach($obat as $r) {?>
-                                            <option value="<?= $r['id_obat'];?>"><?= $r['nama_obat'];?></option>
-                                        <?php }?>
-                                    </select>
+                        <form method="post" action="<?= base_url('kunjungan/insert_resep'); ?>">
+                            <input type="hidden" name="id" value="<?= $d['id_berobat']; ?>">
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <div class="form-group">
+                                        <select name="obat" id="" class="form-control">
+                                            <?php foreach ($obat as $r) { ?>
+                                                <option value="<?= $r['id_obat']; ?>"><?= $r['nama_obat']; ?></option>
+                                            <?php } ?>
+                                        </select>
+                                    </div>
                                 </div>
+                                <div class="col-md-4">
+                                    <button type="submit" class="btn btn-success">+</button>
+                                </div>
+                            </div>
                         </form>
+                        <hr>
+                        <table class="table table-striped table-sm">
+                            <thead>
+                                <tr>
+                                    <th>No.</th>
+                                    <th>Nama Obat</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php $no = 1;
+                                foreach ($resep as $r) { ?>
+                                    <tr>
+                                        <td><?= $no; ?></td>
+                                        <td><?= $r['nama_obat']; ?></td>
+                                        <td>
+                                            <a href="<?= base_url() . 'kunjungan/hapus_resep/' . $r['id_resep'] . '/' . $r['id_berobat']; ?>" class="text-danger">x</a>
+                                        </td>
+                                    </tr>
+                                <?php $no++;
+                                } ?>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
