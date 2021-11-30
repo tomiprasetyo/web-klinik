@@ -97,4 +97,20 @@ class Kunjungan extends CI_Controller
         $this->model_kunjungan->hapus_data($where);
         redirect("kunjungan");
     }
+
+    //fungsi rekam medis
+
+    function rekam($id)
+    {
+        $data['title'] = "Rekam Medis";
+
+        $q = $this->db->query("SELECT id_pasien FROM berobat WHERE id_berobat='$id'")->row_array();
+        $id_pasien = $q['id_pasien'];
+
+        
+
+        $this->load->view('view_header', $data);
+        $this->load->view('kunjungan/view_rekam_medis', $data);
+        $this->load->view('view_footer');
+    }
 }
