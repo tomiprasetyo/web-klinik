@@ -15,6 +15,7 @@ class Kunjungan extends CI_Controller
         $this->load->model("model_kunjungan");
         $this->load->model("model_pasien");
         $this->load->model("model_dokter");
+        $this->load->model("model_obat");
     }
 
     public function index()
@@ -96,5 +97,74 @@ class Kunjungan extends CI_Controller
         $where = array("id_berobat" => $id);
         $this->model_kunjungan->hapus_data($where);
         redirect("kunjungan");
+    }
+
+    //fungsi rekam medis
+
+    function rekam($id)
+    {
+        $data['title'] = "Rekam Medis";
+
+        //menampilkan detail rekam medis
+        $data['d'] = $this->model_kunjungan->tampil_rekam($id)->row_array();
+
+        //menampilkan riwayat kunjungan
+        $q = $this->db->query("SELECT id_pasien FROM berobat WHERE id_berobat='$id'")->row_array();
+        $id_pasien = $q['id_pasien'];
+
+        $data['riwayat'] = $this->model_kunjungan->tampil_riwayat($id_pasien)->result_array();
+
+        //menampilkan data obat di combo
+        $data['obat'] = $this->model_obat->tampil_data()->result_array();
+
+        //menampilkan resep obat
+        $data['resep'] = $this->model_kunjungan->tampil_resep($id)->result_array();
+
+
+        $this->load->view('view_header', $data);
+        $this->load->view('kunjungan/view_rekam_medis', $data);
+        $this->load->view('view_footer');
+    }
+
+    function insert_rekam()
+    {
+        $id_berobat = $this->input->post('id');
+        $keluhan = $this->input->post('keluhan');
+        $diagnosa = $this->input->post('diagnosa');
+        $penatalaksanaan = $this->input->post('penatalaksanaan');
+
+        $data = array(
+            'keluhan_pasien' => $keluhan,
+            'hasil_diagnosa' => $diagnosa,
+            'penatalaksanaan' => $penatalaksanaan,
+        );
+
+        $where = array('id_berobat' => $id_berobat);
+
+        $this->model_kunjungan->update_data($data, $where);
+
+        redirect('kunjungan/rekam/' . $id_berobat);
+    }
+
+    function insert_resep()
+    {
+        $id_berobat = $this->input->post('id');
+        $obat = $this->input->post('obat');
+
+        $data = array(
+            'id_berobat' => $id_berobat,
+            'id_obat' => $obat
+        );
+
+        $this->model_kunjungan->insert_resep($data);
+
+        redirect('kunjungan/rekam/' . $id_berobat);
+    }
+
+    function hapus_resep($id, $id_berobat)
+    {
+        $where = array('id_resep' => $id);
+        $this->model_kunjungan->hapus_resep($where);
+        redirect('kunjungan/rekam/' . $id_berobat);
     }
 }

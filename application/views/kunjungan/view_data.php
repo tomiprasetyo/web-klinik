@@ -27,24 +27,20 @@
                             $no = 1;
                             foreach ($kunjungan as $u) { ?>
 
-                            <tr>
-                                <td class="text-center"><?= $no; ?></td>
-                                <td><?= $u["tgl_berobat"]; ?></td>
-                                <td><?= $u["nama_pasien"]; ?></td>
-                                <td><?= $u["umur"]; ?></td>
-                                <td><?= $u["nama_dokter"]; ?></td>
-                                <td>
-                                    <a href="<?= base_url(); ?>kunjungan/rekam/<?= $u["id_berobat"]; ?>"
-                                        class="btn btn-success btn-sm">Rekam</a>
-                                </td>
-                                <td>
-                                    <a href="<?= base_url() . "kunjungan/edit/" . $u["id_berobat"]; ?>"
-                                        class="btn btn-warning btn-sm">Edit</a>
-                                    <a href="<?= base_url() . "kunjungan/hapus/" . $u["id_berobat"]; ?>"
-                                        class="btn btn-danger btn-sm"
-                                        onclick="return confirm('Yakin akan menghapus data?')">Hapus</a>
-                                </td>
-                            </tr>
+                                <tr>
+                                    <td class="text-center"><?= $no; ?></td>
+                                    <td><?= $u["tgl_berobat"]; ?></td>
+                                    <td><?= $u["nama_pasien"]; ?></td>
+                                    <td><?= $u["umur"]; ?></td>
+                                    <td><?= $u["nama_dokter"]; ?></td>
+                                    <td>
+                                        <a href="<?= base_url(); ?>kunjungan/rekam/<?= $u["id_berobat"]; ?>" class="btn btn-success btn-sm">Rekam</a>
+                                    </td>
+                                    <td>
+                                        <a href="<?= base_url() . "kunjungan/edit/" . $u["id_berobat"]; ?>" class="btn btn-warning btn-sm">Edit</a>
+                                        <a href="<?= base_url() . "kunjungan/hapus/" . $u["id_berobat"]; ?>" class="btn btn-danger btn-sm" onclick="return confirm('Yakin akan menghapus data?')">Hapus</a>
+                                    </td>
+                                </tr>
                             <?php $no++;
                             } ?>
                         </tbody>
