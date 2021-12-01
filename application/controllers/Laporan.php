@@ -26,7 +26,7 @@ class Laporan extends CI_Controller
     {
         $data['title'] = "Laporan Data Dokter";
         $data['dokter'] = $this->model_dokter->tampil_data()->result_array();
-        $this->load->view('laporan/view_laporan_dokter');
+        $this->load->view('laporan/view_laporan_dokter', $data);
     }
 
     function data_pasien()
