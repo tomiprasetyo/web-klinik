@@ -6,8 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= $title; ?></title>
-
     <link rel="stylesheet" href="<?= base_url();?>assets/css/bootstrap.min.css">
+
+    <style>
+        .table-bordered th,
+        .table-bordered thead th,
+        .table-bordered td{
+            border: 1px solid black;
+        }
+    </style>
 </head>
 
 <body>
@@ -18,13 +25,13 @@
         <h4 class="text-center">LAPORAN DATA DOKTER</h4>
         <table class="table table-bordered ">
             <tr>
-                <th>No.</th>
+                <th width="80px">No.</th>
                 <th>Nama Dokter</th>
             </tr>
             <?php $no = 1; foreach ($dokter as $r) { ?>
                 <tr>
-                    <th><?= $no; ?></th>
-                    <th><?= $r['nama_dokter']; ?></th>
+                    <td><?= $no; ?></td>
+                    <td><?= $r['nama_dokter']; ?></td>
                 </tr>
             <?php $no++; } ?>
         </table>

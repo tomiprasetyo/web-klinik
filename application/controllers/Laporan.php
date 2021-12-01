@@ -31,11 +31,15 @@ class Laporan extends CI_Controller
 
     function data_pasien()
     {
-        # code...
+        $data['title'] = "Laporan Data Pasien";
+        $data['pasien'] = $this->model_pasien->tampil_data()->result_array();
+        $this->load->view('laporan/view_laporan_pasien', $data);
     }
 
     function data_kunjungan()
     {
-        # code...
+        $data['title'] = "Laporan Data Kunjungan";
+        $data['kunjungan'] = $this->model_kunjungan->tampil_data()->result_array();
+        $this->load->view('laporan/view_laporan_kunjungan', $data);
     }
 }
