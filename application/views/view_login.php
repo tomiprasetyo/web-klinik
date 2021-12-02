@@ -28,32 +28,34 @@
             margin-right: 100px;
         }
 
-        .ini_judul{
+        .ini_judul {
             padding-top: 100px;
             padding-bottom: 100px;
         }
 
-        .ini_login{
+        .ini_login {
             padding-top: 100px;
             padding-bottom: 100px;
         }
 
-        .ini_tentang{
+        .ini_tentang {
             padding-top: 100px;
             padding-bottom: 100px;
         }
 
-        .ini_kontak{
+        .ini_kontak {
             padding-top: 100px;
             padding-bottom: 100px;
         }
-
     </style>
     <!-- Custom styles for this template -->
     <!-- <link href="<?= base_url(); ?>assets/custom/login.css" rel="stylesheet"> -->
 </head>
 
 <body>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+        <path fill="#00B0FF" fill-opacity="1" d="M0,224L80,229.3C160,235,320,245,480,213.3C640,181,800,107,960,90.7C1120,75,1280,117,1360,138.7L1440,160L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"></path>
+    </svg>
     <div class="container">
         <!-- start navbar -->
         <div class="ini_navbar row">
@@ -97,7 +99,7 @@
             </div>
             <div class="ini_login row pt-4" id="home">
                 <div class="col py-4">
-                    <div data-aos="fade-up-right" class="img" >
+                    <div data-aos="fade-up-right" class="img">
                         <img src="<?= base_url(); ?>assets/undraw_doctors_hwty.svg" alt="" width="400px">
                     </div>
                 </div>
@@ -106,7 +108,7 @@
                         <div class="alert-danger">
                             <?= validation_errors(); ?>
                         </div>
-                        <div data-aos="fade-up-left" class="input-group shadow p-3 mb-5"  style="width:400px; border-radius: 15px;">
+                        <div data-aos="fade-up-left" class="input-group shadow p-3 mb-5" style="width:400px; border-radius: 15px;">
                             <div class="input-group-prepend">
                                 <span class="input-group-text border-0 bg-transparent pr-4" id="basic-addon1">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
@@ -117,7 +119,7 @@
                             <input type="text" id="username" name="username" style="border: none;" class="border-0" placeholder="username" autofocus>
                         </div>
                         <!-- inputpass -->
-                        <div data-aos="fade-up-left" class="input-group py-3 shadow p-3 mb-5"  style="width:400px; border-radius: 15px;">
+                        <div data-aos="fade-up-left" class="input-group py-3 shadow p-3 mb-5" style="width:400px; border-radius: 15px;">
                             <div class="input-group-prepend">
                                 <span class="input-group-text border-0 bg-transparent pr-4" id="basic-addon1">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-key" viewBox="0 0 16 16">
@@ -222,7 +224,9 @@
     </div>
 
     </div>
-
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+        <path fill="#00B0FF" fill-opacity="1" d="M0,160L34.3,144C68.6,128,137,96,206,74.7C274.3,53,343,43,411,80C480,117,549,203,617,240C685.7,277,754,267,823,234.7C891.4,203,960,149,1029,149.3C1097.1,149,1166,203,1234,218.7C1302.9,235,1371,213,1406,202.7L1440,192L1440,320L1405.7,320C1371.4,320,1303,320,1234,320C1165.7,320,1097,320,1029,320C960,320,891,320,823,320C754.3,320,686,320,617,320C548.6,320,480,320,411,320C342.9,320,274,320,206,320C137.1,320,69,320,34,320L0,320Z"></path>
+    </svg>
     <!-- aos link -->
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
