@@ -1,8 +1,7 @@
-<footer class="footer mt-4 py-3">
-    <div class="container-fluid text-center">
-        <span class="text-muted">Copyright &copy; 2021 - Kelompok Satu</span>
+
+    <div class="footer text-center" style="border-radius: 40px;">
+        <p class="text-muted">&copy; 2021 - <a class="text-muted" href="https://github.com/tomiprasetyo/web-klinik">Kelompok 1</a></p>
     </div>
-</footer>
 
 <!-- Optional JavaScript -->
 
@@ -14,6 +13,11 @@
 </script>
 <script src="<?= base_url(); ?>assets/js/bootstrap.min.js" crossorigin="anonymous">
 </script>
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+    AOS.init();
+</script>
+</div>
 </body>
 
 </html>
