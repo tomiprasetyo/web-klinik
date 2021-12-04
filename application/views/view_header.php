@@ -11,27 +11,29 @@
     <title>Klinik Sehat Sejahtera</title>
 
     <style>
-        .footer {
-            background-color: #f5f5f5;
-        }
+    .footer {
+        background-color: #f5f5f5;
+    }
 
-        .footer>.container {
-            padding-right: 15px;
-            padding-left: 15px;
-        }
+    .footer>.container {
+        padding-right: 15px;
+        padding-left: 15px;
+    }
     </style>
 </head>
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <a class="navbar-brand" href="<?= base_url(); ?>">Klinik Sehat Sejahtera</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav">
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarMaster" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarMaster" role="button" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
                         Master Data
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarMaster">
@@ -47,7 +49,8 @@
                 </li>
 
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarLaporan" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarLaporan" role="button" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
                         Laporan
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarLaporan">
