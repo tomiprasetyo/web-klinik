@@ -1,9 +1,9 @@
 <section class="content mt-2">
-    <div class="container-fluid">
+    <div class="container">
         <div class="row">
             <div class="col-md-6">
-                <div class="card border-primary">
-                    <div class="card-header bg-primary text-white">
+                <div class="card border-0 animate__animated animate__slideInLeft">
+                    <div class="card-header" style="background-color: #F6D7A7; border-radius:10px;">
                         Biodata Pasien
                     </div>
                     <div class="card-body">
@@ -28,8 +28,8 @@
                     </div>
                 </div>
 
-                <div class="card border-info mt-4">
-                    <div class="card-header bg-info text-white">
+                <div class="card border-0 mt-4 animate__animated animate__slideInLeft">
+                    <div class="card-header" style="background-color: #F6EAB7; border-radius:10px;">
                         Riwayat Berobat
                     </div>
                     <div class="card-body">
@@ -62,10 +62,10 @@
             </div>
 
             <div class="col-md-6">
-                <div class="card border-danger">
-                    <div class="card-header bg-danger text-white">
+                <div class="card border-0 animate__animated animate__slideInRight">
+                    <div class="card-header" style="background-color: #C8E3D4; border-radius:10px;">
                         Catatan ( Rekam Medis )
-                        <a href="<?= base_url('kunjungan') ?>" class="btn btn-warning btn-sm float-right">Kembali</a>
+                        <a href="<?= base_url('kunjungan') ?>" class="btn btn-warning btn-sm float-right" style="border-radius: 10px;">Kembali</a>
                     </div>
                     <div class="card-body">
                         <form method="post" action="<?= base_url(); ?>kunjungan/insert_rekam">
@@ -88,58 +88,58 @@
                                     <option value="Lainnya">Lainnya</option>
                                 </select>
                             </div>
-                            <button type="submit" class="btn btn-danger btn-sm">Simpan Data</button>
+                            <button type="submit" class="btn btn-success btn-sm" style="border-radius: 10px;">Simpan Data</button>
                         </form>
                     </div>
                 </div>
 
-                <div class="card border-success mt-4">
-                    <div class="card-header bg-success text-white">
-                        Resep Obat
-                    </div>
-                    <div class="card-body">
-                        <form method="post" action="<?= base_url('kunjungan/insert_resep'); ?>">
-                            <input type="hidden" name="id" value="<?= $d['id_berobat']; ?>">
-                            <div class="row">
-                                <div class="col-md-8">
-                                    <div class="form-group">
-                                        <select name="obat" id="" class="form-control">
-                                            <?php foreach ($obat as $r) { ?>
-                                                <option value="<?= $r['id_obat']; ?>"><?= $r['nama_obat']; ?></option>
-                                            <?php } ?>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <button type="submit" class="btn btn-success">+</button>
-                                </div>
+            </div>
+        </div>
+        <div class="card header animate__animated animate__zoomInDown">
+            <div class="card-header text-white text-center" style="background-color: #87AAAA; border-radius:10px;" >
+                Resep Obat
+            </div>
+            <div class="card-body">
+                <form method="post" action="<?= base_url('kunjungan/insert_resep'); ?>">
+                    <input type="hidden" name="id" value="<?= $d['id_berobat']; ?>">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <div class="form-group">
+                                <select name="obat" id="" class="form-control">
+                                    <?php foreach ($obat as $r) { ?>
+                                        <option value="<?= $r['id_obat']; ?>"><?= $r['nama_obat']; ?></option>
+                                    <?php } ?>
+                                </select>
                             </div>
-                        </form>
-                        <hr>
-                        <table class="table table-striped table-sm">
-                            <thead>
-                                <tr>
-                                    <th>No.</th>
-                                    <th>Nama Obat</th>
-                                    <th></th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <?php $no = 1;
-                                foreach ($resep as $r) { ?>
-                                    <tr>
-                                        <td><?= $no; ?></td>
-                                        <td><?= $r['nama_obat']; ?></td>
-                                        <td>
-                                            <a href="<?= base_url() . 'kunjungan/hapus_resep/' . $r['id_resep'] . '/' . $r['id_berobat']; ?>" class="text-danger">x</a>
-                                        </td>
-                                    </tr>
-                                <?php $no++;
-                                } ?>
-                            </tbody>
-                        </table>
+                        </div>
+                        <div class="col-md-4">
+                            <button type="submit" class="btn btn-danger" style="border-radius: 10px;">+</button>
+                        </div>
                     </div>
-                </div>
+                </form>
+                <hr>
+                <table class="table table-striped table-sm">
+                    <thead>
+                        <tr>
+                            <th>No.</th>
+                            <th>Nama Obat</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php $no = 1;
+                        foreach ($resep as $r) { ?>
+                            <tr>
+                                <td><?= $no; ?></td>
+                                <td><?= $r['nama_obat']; ?></td>
+                                <td>
+                                    <a href="<?= base_url() . 'kunjungan/hapus_resep/' . $r['id_resep'] . '/' . $r['id_berobat']; ?>" class="text-danger">x</a>
+                                </td>
+                            </tr>
+                        <?php $no++;
+                        } ?>
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>

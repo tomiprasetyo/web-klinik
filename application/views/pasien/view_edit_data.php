@@ -1,12 +1,12 @@
 <section class="content mt-2">
     <div class="container-fluid">
-        <div class="card border-primary">
-            <div class="card-header bg-primary text-white">
+        <div class="card border-0">
+            <div class="card-header" style="background-color: #C8E3D4; border-radius:10px;">
                 <?= $title; ?>
 
-                <a href="<?= base_url("pasien"); ?>" class="btn btn-warning btn-sm float-right">Kembali</a>
+                <a href="<?= base_url("pasien"); ?>" class="btn btn-warning btn-sm float-right" style="border-radius:10px;">Kembali</a>
             </div>
-            <div class="card-body">
+            <div class="card-body animate__animated animate__fadeInDown">
                 <form method="POST" action="<?= base_url("pasien/update"); ?>">
                     <input type="hidden" name="id" value="<?= $pasien['id_pasien']; ?>">
                     <div class="form-group">
@@ -26,7 +26,7 @@
                         <input type="number" name="umur" value="<?= $pasien['umur']; ?>" class="form-control" required>
                     </div>
                     <div class="form-group">
-                        <button type="submit" class="btn btn-primary btn-sm">Update Data</button>
+                        <button type="submit" class="btn btn-sm btn-success" style="border-radius: 10px;">Update Data</button>
                     </div>
                 </form>
             </div>
