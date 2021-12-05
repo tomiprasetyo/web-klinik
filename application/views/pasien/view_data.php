@@ -1,7 +1,7 @@
 <section class="content mt-2">
     <div class="container-fluid">
-        <div class="card border-primary">
-            <div class="card-header bg-primary text-white">
+        <div class="card border-0">
+            <div class="card-header" style="background-color: #C8E3D4; ">
                 <?= $title; ?>
 
                 <a href="<?= base_url("pasien/tambah"); ?>" class="btn btn-success btn-sm float-right">Tambah Data</a>

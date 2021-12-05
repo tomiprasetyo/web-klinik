@@ -31,7 +31,7 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light" style="background-image: linear-gradient(#e3f2fd, white)">
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-image: linear-gradient(#a2d9ff, white)">
         <div class="container">
             <a class="navbar-brand" href="<?= base_url(); ?>">
                 <h4 class="font-weight-bold">Clinic.web</h4>
