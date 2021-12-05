@@ -183,9 +183,6 @@
                                         kita buat juga tidak terlalu sulit , tetapi penerapannya sangat efisien</p>
 
                     </div>
-                    <div class="card-footer text-muted">
-                        <a href="#home" class="btn btn-primary">Saya Mau Coba !</a>
-                    </div>
                 </div>
             </div>
 
