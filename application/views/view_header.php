@@ -62,7 +62,7 @@
                             Laporan
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarLaporan">
-                            <a class="dropdown-item" href="<?= base_url("laporan/data_dokter") ?>">Data Dokter</a>
+                            <a class="dropdown-item" href="<?= base_url("laporan/data_dokter") ?>">Data Dokter </a>
                             <a class="dropdown-item" href="<?= base_url("laporan/data_pasien") ?>">Data Pasien</a>
                             <a class="dropdown-item" href="<?= base_url("laporan/data_kunjungan") ?>">Data Kunjungan</a>
                         </div>
